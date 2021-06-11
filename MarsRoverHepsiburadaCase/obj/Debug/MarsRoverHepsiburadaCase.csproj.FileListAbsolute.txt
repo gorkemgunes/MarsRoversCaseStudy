@@ -1,0 +1,6 @@
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\bin\Debug\MarsRoverHepsiburadaCase.dll
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\bin\Debug\MarsRoverHepsiburadaCase.pdb
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\obj\Debug\MarsRoverHepsiburadaCase.csprojAssemblyReference.cache
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\obj\Debug\MarsRoverHepsiburadaCase.csproj.CoreCompileInputs.cache
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\obj\Debug\MarsRoverHepsiburadaCase.dll
+C:\Users\U090562\source\repos\MarsRoverHepsiburadaCase\MarsRoverHepsiburadaCase\obj\Debug\MarsRoverHepsiburadaCase.pdb
