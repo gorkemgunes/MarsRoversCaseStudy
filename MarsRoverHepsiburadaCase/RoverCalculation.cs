@@ -13,12 +13,9 @@ namespace MarsRoverHepsiburadaCase
         {
             this.areaSize = areaSize;
         }
-        public void initializeRoverPositionAndOperation(string roverPosition, string roverOperation)
+        public void initializeRoverPositionAndOperation(string roverPosition, string roverProcess)
         {
-            this.Add(new Rover(this, this.areaSize, roverPosition, roverOperation));
-        }
-
-        
-        
+            this.Add(new Rover(this, this.areaSize, roverPosition, roverProcess));
+        } 
     }
 }

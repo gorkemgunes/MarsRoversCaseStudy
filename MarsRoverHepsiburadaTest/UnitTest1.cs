@@ -16,8 +16,7 @@ namespace MarsRoverHepsiburadaTest
             Assert.IsNotNull(areaSize.Width);
             Assert.IsNotNull(areaSize.Height);
             Assert.AreEqual(5, areaSize.Width);
-            Assert.AreEqual(5, areaSize.Height);
-
+            Assert.AreEqual(5, areaSize.Height); 
         }
 
 
@@ -45,8 +44,7 @@ namespace MarsRoverHepsiburadaTest
             IRover secondRover = roverCal[1];
 
             Assert.IsNotNull(firstRover);
-            Assert.IsNotNull(secondRover);
-
+            Assert.IsNotNull(secondRover); 
         }
 
 
@@ -64,10 +62,10 @@ namespace MarsRoverHepsiburadaTest
             roverCal.initializeRoverPositionAndOperation("3 3 E", "MMRMMRMRRM");
 
             //FirstRover has not changed direction
-            Assert.IsFalse(roverCal[0].XCoordinate == 1 && roverCal[0].YCoordinate == 2 && roverCal[0].RoverDirection == "N");
+            Assert.IsFalse(roverCal[0].CoordinateXAxis == 1 && roverCal[0].CoordinateYAxis == 2 && roverCal[0].RoverDirection == "N");
 
             //SecondRover has not changed direction
-            Assert.IsFalse(roverCal[1].XCoordinate == 3 && roverCal[1].YCoordinate == 3 && roverCal[1].RoverDirection == "E");
+            Assert.IsFalse(roverCal[1].CoordinateXAxis == 3 && roverCal[1].CoordinateYAxis == 3 && roverCal[1].RoverDirection == "E");
              
         }
 
@@ -78,24 +76,21 @@ namespace MarsRoverHepsiburadaTest
             var mockObject = Substitute.For<IScanningAreaSize>();
             mockObject.Width.Returns(5);
             mockObject.Height.Returns(5);
-            RoverCalculation roverSquad = new RoverCalculation(mockObject);
+            RoverCalculation roverCal = new RoverCalculation(mockObject);
 
             //initialize rover position and operation
-            roverSquad.initializeRoverPositionAndOperation("1 2 N", "LMLMLMLMM");
-            roverSquad.initializeRoverPositionAndOperation("3 3 E", "MMRMMRMRRM");
-
-            int roverOneIdx = 0;
-            int roverTwoIdx = 1;
-
-            IRover firstRover = roverSquad[roverOneIdx];
-            IRover secondRover = roverSquad[roverTwoIdx]; 
+            roverCal.initializeRoverPositionAndOperation("1 2 N", "LMLMLMLMM");
+            roverCal.initializeRoverPositionAndOperation("3 3 E", "MMRMMRMRRM");
              
-            Assert.AreEqual(1, firstRover.XCoordinate);
-            Assert.AreEqual(3, firstRover.YCoordinate);
+            IRover firstRover = roverCal[0];
+            IRover secondRover = roverCal[1]; 
+             
+            Assert.AreEqual(1, firstRover.CoordinateXAxis);
+            Assert.AreEqual(3, firstRover.CoordinateYAxis);
             Assert.AreEqual("N",firstRover.RoverDirection);
 
-            Assert.AreEqual(5, secondRover.XCoordinate);
-            Assert.AreEqual(1, secondRover.YCoordinate);
+            Assert.AreEqual(5, secondRover.CoordinateXAxis);
+            Assert.AreEqual(1, secondRover.CoordinateYAxis);
             Assert.AreEqual("E", secondRover.RoverDirection);
         }
     }

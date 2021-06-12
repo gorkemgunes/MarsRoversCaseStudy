@@ -7,8 +7,8 @@ namespace MarsRoverHepsiburadaCase
 {
     public interface IRover
     {
-        int XCoordinate { get; set; }
-        int YCoordinate { get; set; }
+        int CoordinateXAxis { get; set; }
+        int CoordinateYAxis { get; set; }
         string RoverDirection { get; set; }
         List<IRover> Rovers { get; set; }
     }

@@ -10,28 +10,21 @@ namespace MarsRoverHepsiburadaCase
         public virtual int Width { get; private set; }
         public virtual int Height { get; private set; }
 
-        private static readonly char SeperateConstant = ' ';
-        //Constructor
-        public AreaSize(int xCrd, int yCrd)
-        {
-            this.Width = xCrd;
-            this.Height = yCrd;
-        }
+        private static readonly char ConstantSeperate = ' '; 
 
         public AreaSize(string areaSize)
         {
             if (string.IsNullOrEmpty(areaSize))
                 throw new Exception("Area can't be null");
 
-            string[] totalSize = areaSize.Split(AreaSize.SeperateConstant);
+            string[] totalSize = areaSize.Split(AreaSize.ConstantSeperate);
 
             //Has two dimension
             if (totalSize.Length != 2)
-                throw new ArgumentOutOfRangeException("Only two dimesion");
+                throw new Exception("Only two dimesion");
 
             this.Width = Convert.ToInt32(totalSize[0]);
-            this.Height = Convert.ToInt32(totalSize[1]);
-             
+            this.Height = Convert.ToInt32(totalSize[1]); 
         } 
     }
 }

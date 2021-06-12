@@ -24,8 +24,8 @@ namespace MarsRoverHepsiburadaCase
             calculateRoverProcess(roverProcess);
         }
 
-        public int XCoordinate { get; set; }
-        public int YCoordinate { get; set; }
+        public int CoordinateXAxis { get; set; }
+        public int CoordinateYAxis { get; set; }
         public string RoverDirection { get; set; }
         public List<IRover> Rovers { get; set; }
 
@@ -44,14 +44,11 @@ namespace MarsRoverHepsiburadaCase
             public const string TurnLeft = "L";
             public const string TurnRight = "R";
         }
-
-        
-
         private void initializeRoverStartPosition(string roverPosition)
         {
             string[] roverPositions = roverPosition.Split(Rover.Seperator);
-            this.XCoordinate = Convert.ToInt32(roverPositions[0]);
-            this.YCoordinate = Convert.ToInt32(roverPositions[1]);
+            this.CoordinateXAxis = Convert.ToInt32(roverPositions[0]);
+            this.CoordinateYAxis = Convert.ToInt32(roverPositions[1]);
             this.RoverDirection = roverPositions[2];
         }
 
@@ -67,13 +64,13 @@ namespace MarsRoverHepsiburadaCase
                     // set new direction
                     case Process.Forward:
                         if (this.RoverDirection == RoverFront.North)
-                            this.YCoordinate += 1;
+                            this.CoordinateYAxis += 1;
                         else if (this.RoverDirection == RoverFront.East)
-                            this.XCoordinate += 1;
+                            this.CoordinateXAxis += 1;
                         else if (this.RoverDirection == RoverFront.South)
-                            this.YCoordinate -= 1;
+                            this.CoordinateYAxis -= 1;
                         else if (this.RoverDirection == RoverFront.West)
-                            this.XCoordinate -= 1;
+                            this.CoordinateXAxis -= 1;
                         break;
 
                     //Rover Turn left
@@ -109,9 +106,12 @@ namespace MarsRoverHepsiburadaCase
 
         private bool RoverIsWithinArea(IScanningAreaSize areaSize)
         {
-            return (this.XCoordinate >= 0) && (this.XCoordinate < areaSize.Width) &&
-                (this.YCoordinate >= 0) && (this.YCoordinate < areaSize.Height);
-        }
+            bool param = false;
+            if ((CoordinateXAxis >= 0) && (CoordinateXAxis < areaSize.Width) &&
+                (CoordinateYAxis >= 0) && (CoordinateYAxis < areaSize.Height))
+                param = true;
 
+            return param;
+        }
     }
 }
